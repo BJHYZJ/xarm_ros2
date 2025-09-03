@@ -41,6 +41,7 @@
     robot_sn:='' 
     mesh_suffix:='stl' 
     kinematics_suffix:=''
+    use_simple_urdf:=true
     "
     > 
 
@@ -171,7 +172,8 @@
           model_num="${model_num}"
           inertial_params_filename="${inertial_params_filename}"
           kinematics_params_filename="${kinematics_params_filename}"
-          hard_interface="${hard_interface}" />
+          hard_interface="${hard_interface}"
+          use_simple_urdf="${use_simple_urdf}" />
       </xacro:unless>
     </xacro:if>
     <xacro:unless value="${dof == 5 or dof == 6}">
