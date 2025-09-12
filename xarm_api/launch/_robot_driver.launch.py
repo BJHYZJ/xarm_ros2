@@ -48,6 +48,13 @@ def launch_setup(context, *args, **kwargs):
             description='The namespace of xarm_driver, default is xarm.',
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            'joint_states_rate',
+            default_value='20',
+            description='Joint states publish rate in Hz.',
+        )
+    )
 
     # Initialize Arguments
     robot_ip = LaunchConfiguration('robot_ip')
@@ -60,7 +67,7 @@ def launch_setup(context, *args, **kwargs):
     prefix = LaunchConfiguration('prefix', default='')
     baud_checkset = LaunchConfiguration('baud_checkset', default=True)
     default_gripper_baud = LaunchConfiguration('default_gripper_baud', default=2000000)
-    joint_states_rate = LaunchConfiguration('joint_states_rate', default=-1)
+    joint_states_rate = LaunchConfiguration('joint_states_rate', default='20')
     
     show_rviz = LaunchConfiguration('show_rviz', default=False)
     robot_type = LaunchConfiguration('robot_type', default='xarm')
